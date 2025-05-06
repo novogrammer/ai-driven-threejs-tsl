@@ -1,5 +1,6 @@
 import './style.css'; // Import the CSS file
 import * as THREE from 'three/webgpu';
+import { createCube } from './cubeFactory'; // ファクトリメソッドをインポート
 
 // シーンを作成
 const scene = new THREE.Scene();
@@ -18,10 +19,8 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setClearColor(0x000000, 1); // Set background color to black
 document.body.appendChild(renderer.domElement);
 
-// ボックスジオメトリとマテリアルを作成
-const geometry = new THREE.BoxGeometry();
-const material = new THREE.MeshStandardMaterial({ color: 0x00ff00 }); // Use MeshStandardMaterial for lighting
-const cube = new THREE.Mesh(geometry, material);
+// ファクトリメソッドで立方体を生成
+const cube = createCube(0x00ff00); // 緑色の立方体を生成
 
 // シーンに追加
 scene.add(cube);
