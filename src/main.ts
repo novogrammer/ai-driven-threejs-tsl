@@ -20,7 +20,7 @@ renderer.setClearColor(0x000000, 1); // Set background color to black
 document.body.appendChild(renderer.domElement);
 
 // ファクトリメソッドで立方体を生成
-const cube = createCube(0x00ff00); // 緑色の立方体を生成
+const cube = createCube();
 
 // シーンに追加
 scene.add(cube);
