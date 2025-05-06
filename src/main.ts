@@ -1,3 +1,4 @@
+import './style.css'; // Import the CSS file
 import * as THREE from 'three';
 
 // シーンを作成
