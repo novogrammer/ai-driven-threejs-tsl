@@ -1,6 +1,6 @@
 import * as THREE from 'three/webgpu';  
 import { vec3, sin, time } from 'three/tsl';  
-import { TeapotGeometry } from 'three/examples/jsm/geometries/TeapotGeometry';
+import { TeapotGeometry } from 'three/addons/geometries/TeapotGeometry.js';
   
 export function createCube(): THREE.Mesh {  
   const geometry = new THREE.BoxGeometry();  
