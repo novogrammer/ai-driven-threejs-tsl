@@ -1,6 +1,6 @@
 import './style.css'; // Import the CSS file
 import * as THREE from 'three/webgpu';
-import { createCube } from './cubeFactory'; // ファクトリメソッドをインポート
+import { createTeapot } from './cubeFactory'; // ファクトリメソッドをインポート
 
 // シーンを作成
 const scene = new THREE.Scene();
@@ -19,11 +19,11 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setClearColor(0x000000, 1); // Set background color to black
 document.body.appendChild(renderer.domElement);
 
-// ファクトリメソッドで立方体を生成
-const cube = createCube();
+// ファクトリメソッドでティーポットを生成
+const teapot = createTeapot();
 
 // シーンに追加
-scene.add(cube);
+scene.add(teapot);
 
 // ライトを作成
 const directionalLight = new THREE.DirectionalLight(0xffffff, 1); // 白色の平行光源
@@ -41,8 +41,8 @@ function animate() {
   requestAnimationFrame(animate);
 
   // 回転アニメーション
-  cube.rotation.x += 0.01;
-  cube.rotation.y += 0.01;
+  teapot.rotation.x += 0.01;
+  teapot.rotation.y += 0.01;
 
   renderer.render(scene, camera);
 }
