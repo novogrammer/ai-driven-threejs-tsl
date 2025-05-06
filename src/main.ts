@@ -1,5 +1,5 @@
 import './style.css'; // Import the CSS file
-import * as THREE from 'three';
+import * as THREE from 'three/webgpu';
 
 // シーンを作成
 const scene = new THREE.Scene();
@@ -13,7 +13,7 @@ const camera = new THREE.PerspectiveCamera(
 );
 
 // レンダラーを作成
-const renderer = new THREE.WebGLRenderer();
+const renderer = new THREE.WebGPURenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
