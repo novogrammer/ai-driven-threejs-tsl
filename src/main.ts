@@ -26,6 +26,14 @@ const cube = new THREE.Mesh(geometry, material);
 // シーンに追加
 scene.add(cube);
 
+// ライトを作成
+const directionalLight = new THREE.DirectionalLight(0xffffff, 1); // 白色の平行光源
+directionalLight.position.set(5, 5, 5); // ライトの位置を設定
+scene.add(directionalLight);
+
+const ambientLight = new THREE.AmbientLight(0x404040, 0.5); // 環境光
+scene.add(ambientLight);
+
 // カメラの位置を設定
 camera.position.z = 5;
 
