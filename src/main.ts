@@ -15,6 +15,7 @@ const camera = new THREE.PerspectiveCamera(
 // レンダラーを作成
 const renderer = new THREE.WebGPURenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setClearColor(0x000000, 1); // Set background color to black
 document.body.appendChild(renderer.domElement);
 
 // ボックスジオメトリとマテリアルを作成
