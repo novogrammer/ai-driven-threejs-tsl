@@ -1,5 +1,6 @@
 import * as THREE from 'three/webgpu';  
 import { vec3, sin, time } from 'three/tsl';  
+import { TeapotGeometry } from 'three/examples/jsm/geometries/TeapotGeometry';
   
 export function createCube(): THREE.Mesh {  
   const geometry = new THREE.BoxGeometry();  
@@ -22,8 +23,7 @@ export function createCube(): THREE.Mesh {
  * @returns THREE.Mesh
  */
 export function createTeapot(): THREE.Mesh {
-  // ティーポットジオメトリを作成
-  const geometry = new THREE.TeapotGeometry(1, 10); // サイズ1、分割数10
+  const geometry = new TeapotGeometry(1, 10); // サイズ1、分割数10
 
   // 時間経過で色が変化するマテリアル
   const material = new THREE.MeshStandardNodeMaterial({
