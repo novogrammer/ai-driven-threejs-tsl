@@ -1,6 +1,6 @@
 import './style.css'; // Import the CSS file
 import * as THREE from 'three/webgpu';
-import { createTeapot } from './cubeFactory'; // ファクトリメソッドをインポート
+import { createTeapot } from './meshFactory'; // 修正後のパス
 
 // シーンを作成
 const scene = new THREE.Scene();
