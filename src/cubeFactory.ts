@@ -7,6 +7,7 @@ import * as THREE from 'three/webgpu';
  */
 export function createCube(color: number = 0x00ff00): THREE.Mesh {
   const geometry = new THREE.BoxGeometry();
-  const material = new THREE.MeshStandardMaterial({ color });
+  const material = new THREE.MeshStandardNodeMaterial({ color });
+
   return new THREE.Mesh(geometry, material);
 }
