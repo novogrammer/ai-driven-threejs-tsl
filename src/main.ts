@@ -20,7 +20,7 @@ document.body.appendChild(renderer.domElement);
 
 // ボックスジオメトリとマテリアルを作成
 const geometry = new THREE.BoxGeometry();
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+const material = new THREE.MeshStandardMaterial({ color: 0x00ff00 }); // Use MeshStandardMaterial for lighting
 const cube = new THREE.Mesh(geometry, material);
 
 // シーンに追加
