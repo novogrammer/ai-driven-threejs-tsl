@@ -1,9 +1,18 @@
-import * as THREE from 'three/webgpu';
-
-
-export function createCube(): THREE.Mesh {
-  const geometry = new THREE.BoxGeometry();
-  const material = new THREE.MeshStandardNodeMaterial({ color: 0x00ff00 });
-
-  return new THREE.Mesh(geometry, material);
+import * as THREE from 'three/webgpu';  
+import { vec3, sin, time } from 'three/tsl';  
+  
+export function createCube(): THREE.Mesh {  
+  const geometry = new THREE.BoxGeometry();  
+    
+  // 時間経過で色が変化するマテリアル  
+  const material = new THREE.MeshStandardNodeMaterial({  
+    // 時間に基づいて色を動的に変更  
+    emissiveNode: vec3(  
+      sin(time.mul(0.5)).mul(0.5).add(0.5), // 赤成分  
+      sin(time.mul(0.3)).mul(0.5).add(0.5), // 緑成分  
+      sin(time.mul(0.2)).mul(0.5).add(0.5)  // 青成分  
+    )  
+  });  
+  
+  return new THREE.Mesh(geometry, material);  
 }
