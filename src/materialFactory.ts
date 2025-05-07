@@ -1,5 +1,5 @@
 import * as THREE from 'three/webgpu';
-import { positionLocal, mx_noise_float,vec3,fract,smoothstep,float,mix,mx_worley_noise_float } from 'three/tsl';
+import { positionLocal, mx_noise_float,vec3,fract,smoothstep,float,mix,mx_worley_noise_float,time,sin } from 'three/tsl';
 import { lerp2 } from './tsl-utils';
 
 
@@ -10,7 +10,7 @@ export function createSkinMaterial(): THREE.MeshStandardNodeMaterial {
   const colorBlue=vec3(0.5,0.5,0.5);
   const colorRed=vec3(0.8,0.3,0.3);
 
-  const rednessBase=mx_noise_float(positionLocal.xyz.mul(2)).mul(0.5).add(0.5);
+  const rednessBase=mx_noise_float(positionLocal.xyz.mul(2)).mul(0.5).add(0.5).mul(sin(time.mul(360 * Math.PI /180 )).mul(0.125).add(0.875));
 
   const colorRedness=lerp2(colorBase,colorRed,float(0),float(1),rednessBase);
 
