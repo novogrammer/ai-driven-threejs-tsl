@@ -37,11 +37,14 @@ scene.add(ambientLight);
 camera.position.z = 3;
 
 // ウィンドウリサイズ時の処理
-window.addEventListener('resize', () => {
+function onWindowResize() {
   camera.aspect = window.innerWidth / window.innerHeight; // カメラのアスペクト比を更新
   camera.updateProjectionMatrix(); // プロジェクションマトリックスを更新
   renderer.setSize(window.innerWidth, window.innerHeight); // レンダラーのサイズを更新
-});
+}
+
+window.addEventListener('resize', onWindowResize);
+onWindowResize(); // 初回にリサイズ処理を実行
 
 // アニメーションループ
 function animate() {
