@@ -36,6 +36,13 @@ scene.add(ambientLight);
 // カメラの位置を設定
 camera.position.z = 3;
 
+// ウィンドウリサイズ時の処理
+window.addEventListener('resize', () => {
+  camera.aspect = window.innerWidth / window.innerHeight; // カメラのアスペクト比を更新
+  camera.updateProjectionMatrix(); // プロジェクションマトリックスを更新
+  renderer.setSize(window.innerWidth, window.innerHeight); // レンダラーのサイズを更新
+});
+
 // アニメーションループ
 function animate() {
   requestAnimationFrame(animate);
