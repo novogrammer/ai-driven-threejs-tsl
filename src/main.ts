@@ -34,15 +34,15 @@ const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // 環境光
 scene.add(ambientLight);
 
 // カメラの位置を設定
-camera.position.z = 5;
+camera.position.z = 3;
 
 // アニメーションループ
 function animate() {
   requestAnimationFrame(animate);
 
   // 回転アニメーション
-  teapot.rotation.x += 0.01;
-  teapot.rotation.y += 0.01;
+  teapot.rotation.x += 0.001;
+  teapot.rotation.y += 0.001;
 
   renderer.render(scene, camera);
 }
